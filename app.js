@@ -19,6 +19,7 @@
 const title = document.querySelector("#advicenumber");
 const content = document.querySelector("#textadvice");
 const button = document.querySelector(".main_card_image2");
+const dicebtn = document.querySelector('.btn')
 
 function generate(){
 
@@ -45,9 +46,12 @@ function generate(){
 }
 
 button.addEventListener('click', ()=>{
+    dicebtn.classList.toggle('dice')
     generate()
 })
 
 window.onload = ()=>{
     generate()
 }
+
+setInterval(generate, 60000);
