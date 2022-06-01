@@ -9,7 +9,7 @@
  /* Neutral Colors */
 
 --Grayish-Blue: hsl(217, 19%, 38%);
---Dark-Grayish-Blue: hsl(217, 19%, 24%);
+--Dark-Grayish-Blue: hsl(217, 19%, 24%); /*#323A49*/
 --Dark-Blue: hsl(218, 23%, 16%);
 }
 
@@ -21,6 +21,7 @@ body{
 
 #main_card{
     background-color: var(--Dark-Grayish-Blue);
+    transition: ease-in-out 5s;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -33,6 +34,25 @@ body{
     background-repeat: no-repeat;
     background-size: 400px;
     background-position: 45px 200px;
+}
+
+.main_card-click{
+    animation: change 5s;
+}
+
+@keyframes change {
+    25%{
+        background-color: var(--Dark-Grayish-Blue);
+    }
+    50%{
+        background-color: #545B67;
+    }
+    75%{
+        background-color: #2A303D;
+    }
+    100%{
+        background-color: #191D25;
+    }
 }
 
 #main_card_header{
@@ -62,6 +82,12 @@ body{
     { transform: rotate(0deg); } 
     to
      { transform: rotate(360deg); } 
+}
+
+@keyframes rotation2 { from 
+    { transform: rotate(360deg); } 
+    to
+     { transform: rotate(0deg); } 
 }
 
 .neon{

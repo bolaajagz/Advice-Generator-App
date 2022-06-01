@@ -19,18 +19,22 @@
 const title = document.querySelector("#advicenumber");
 const content = document.querySelector("#textadvice");
 const button = document.querySelector(".main_card_image2");
-const dicebtn = document.querySelector('.btn')
+const dicebtn = document.querySelector('.btn');
+const changebg = document.querySelector('.clickchange');
+
+
+
 
 function generate(){
-
+    
     const file = "https://api.adviceslip.com/advice"
-
+    
     fetch(file)
-
+    
     .then(response =>
-         response.json()
+        response.json()
     )
-
+    
     .then(information => {
         const num = information.slip.id
         const text = information.slip.advice;
@@ -43,15 +47,30 @@ function generate(){
         console.log(error);
     })
 
+    
+    changebg.classList.toggle('main_card-click')
 }
 
 button.addEventListener('click', ()=>{
-    dicebtn.classList.toggle('dice')
-    generate()
+    setTimeout(() => {
+        dicebtn.classList.toggle('dice')
+        generate()
+        
+    }, 1000);
+
 })
 
 window.onload = ()=>{
-    generate()
+    setTimeout(() => {
+        generate()
+        
+    }, 1000);
 }
 
-setInterval(generate, 60000);
+setInterval(generate, 10000);
+
+
+
+
+
+
